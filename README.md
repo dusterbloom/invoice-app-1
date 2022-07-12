@@ -40,7 +40,7 @@ Users should be able to:
 - [MongoDB](https://www.mongodb.com/) - MongoDB
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript
 
-## Author
+## Original Author
 
 - Website - [Greg Solomon](https://www.gregsolomon.dev)
 - Frontend Mentor - [@greg-solomon](https://www.frontendmentor.io/profile/greg-solomon)

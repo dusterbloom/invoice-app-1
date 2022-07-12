@@ -24,7 +24,7 @@ const Indicator: React.FC<IndicatorProps> = ({ type }) => {
       );
     case "clearing":
     return (
-      <div className={styles.clearing}>
+      <div className={styles.pending}>
         <span></span>
         <p>Clearing</p>
       </div>

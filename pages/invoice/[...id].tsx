@@ -54,6 +54,13 @@ const InvoicePage: React.FC = () => {
       setInvoice({ ...invoice, status: "cleared" });    }
   }; 
 
+  const handleMarkAsClearing = () => {
+    console.log(`Marking as clearing...`);
+    if (invoice) {
+      editInvoice(invoice.id, { ...invoice, status: "clearing" });
+      setInvoice({ ...invoice, status: "clearing" });    }
+  }; 
+
   return (
     <main
       role="main"

@@ -27,7 +27,7 @@ export const Controls: React.FC<ControlsProps> = ({
       <Button variant={4} onClick={onClickDelete}>
         Delete
       </Button>
-      <Button variant={6} onClick={onClickClearing}>
+      <Button variant={5} onClick={onClickClearing}>
         Send to clearing
       </Button>
       {status === "pending" && (

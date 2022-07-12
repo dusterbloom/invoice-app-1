@@ -46,21 +46,7 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
     <div className={[styles.root, dark ? styles.darkRoot : ""].join(" ")}>
       <div onClick={openHandler.toggle}>
         {screenType === "phone" ? "Filter" : "Filter by status"}
-        <svg
-          width="11"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{
-            transform: open ? "scaleY(-1)" : "scaleY(1)",
-          }}
-        >
-          <path
-            d="M1 1l4.228 4.228L9.456 1"
-            stroke="#7C5DFA"
-            strokeWidth="2"
-            fill="none"
-            fillRule="evenodd"
-          />
-        </svg>
+        
       </div>
       {open && (
         <div

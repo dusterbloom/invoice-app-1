@@ -48,7 +48,6 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
         {screenType === "phone" ? "Filter" : "Filter by status"}
         <svg
           width="11"
-          height="7"
           xmlns="http://www.w3.org/2000/svg"
           style={{
             transform: open ? "scaleY(-1)" : "scaleY(1)",

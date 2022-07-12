@@ -43,9 +43,16 @@ const InvoicePage: React.FC = () => {
     console.log(`Marking as paid...`);
     if (invoice) {
       editInvoice(invoice.id, { ...invoice, status: "paid" });
-      setInvoice({ ...invoice, status: "paid" });
-    }
+      setInvoice({ ...invoice, status: "paid" });    }
   };
+
+
+  const handleMarkAsCleared = () => {
+    console.log(`Marking as cleared...`);
+    if (invoice) {
+      editInvoice(invoice.id, { ...invoice, status: "cleared" });
+      setInvoice({ ...invoice, status: "cleared" });    }
+  }; 
 
   return (
     <main
@@ -71,6 +78,8 @@ const InvoicePage: React.FC = () => {
           onClickEditing={setEditing.toggle}
           onClickDelete={deletingHandlers.on}
           onClickPaid={handleMarkAsPaid}
+          onClickCleared={handleMarkAsCleared}
+
         />
       )}
       {invoice && <Summary invoice={invoice} />}
@@ -79,6 +88,7 @@ const InvoicePage: React.FC = () => {
           onClickEditing={setEditing.toggle}
           onClickDelete={deletingHandlers.on}
           onClickPaid={handleMarkAsPaid}
+          onClickCleared={handleMarkAsCleared}
           status={invoice.status}
         />
       )}

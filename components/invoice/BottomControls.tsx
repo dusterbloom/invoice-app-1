@@ -7,6 +7,8 @@ interface BottomControlsProps {
   onClickEditing: () => void;
   onClickDelete: () => void;
   onClickPaid: () => void;
+  onClickClearing: () => void;
+  onClickCleared: () => void;
   status: ItemStatus;
 }
 

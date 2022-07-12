@@ -30,7 +30,40 @@ $paidBg: rgba(51, 214, 159, 0.0571);
   }
 }
 
+.cleared {
+  @include normalText();
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  min-width: 6.5rem;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 6px;
+  span {
+    display: inline-block;
+    min-width: 0.5rem;
+    min-height: 0.5rem;
+    border-radius: 50%;
+
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: $tablet) {
+    margin-left: 2rem;
+  }
+}
+
+
 .pending {
+  background: $fadedOrange;
+  color: $orange;
+
+  span {
+    background-color: $orange;
+  }
+}
+
+.clearing {
   background: $fadedOrange;
   color: $orange;
 

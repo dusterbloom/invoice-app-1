@@ -11,6 +11,9 @@ interface FilterDropdownProps {
     paid: FilterType;
     pending: FilterType;
     draft: FilterType;
+    clearing: FilterType;
+    cleared: FilterType;
+
   };
 }
 
@@ -80,10 +83,22 @@ export const FilterDropdown: React.FC<FilterDropdownProps> = ({
             checked={filters.pending.value}
           />
           <Checkbox
+            name="clearing"
+            label="Clearing"
+            onChange={filters.clearing.onChange}
+            checked={filters.clearing.value}
+          />
+          <Checkbox
             name="paid"
             label="Paid"
             onChange={filters.paid.onChange}
             checked={filters.paid.value}
+          />
+          <Checkbox
+            name="cleared"
+            label="Cleared"
+            onChange={filters.cleared.onChange}
+            checked={filters.cleared.value}
           />
         </div>
       )}

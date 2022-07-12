@@ -6,6 +6,8 @@ interface ControlsProps {
   onClickEditing: () => void;
   onClickDelete: () => void;
   onClickPaid: () => void;
+  onClickClearing: () => void;
+  onClickCleared: () => void;
   status: ItemStatus;
 }
 
@@ -13,6 +15,8 @@ export const Controls: React.FC<ControlsProps> = ({
   onClickEditing,
   onClickDelete,
   onClickPaid,
+  onClickClearing,
+  onClickCleared,
   status,
 }) => {
   return (
@@ -23,11 +27,19 @@ export const Controls: React.FC<ControlsProps> = ({
       <Button variant={4} onClick={onClickDelete}>
         Delete
       </Button>
+      <Button variant={6} onClick={onClickClearing}>
+        Send to clearing
+      </Button>
       {status === "pending" && (
         <Button variant={1} onClick={onClickPaid}>
           Mark as Paid
-        </Button>
-      )}
+        </Button>)}
+      {status === "clearing" && (
+        <Button variant={2} onClick={onClickCleared}>
+            Mark as Cleared
+          </Button>
+        )}
+      
     </div>
   );
 };

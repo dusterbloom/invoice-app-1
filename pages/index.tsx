@@ -18,6 +18,8 @@ export default function Home() {
   const [draftFilter, draftFilterHandler] = useToggle();
   const [pendingFilter, pendingFilterHandler] = useToggle();
   const [paidFilter, paidFilterHandler] = useToggle();
+  const [clearedFilter, clearedFilterHandler] = useToggle();
+  const [clearingFilter, clearingFilterHandler] = useToggle();
   const [isModalOpen, modalHandler] = useToggle();
   const [activeFilters, setActiveFilters] = React.useState<ItemStatus[]>([]);
   const { screenType } = useScreenContext();
@@ -28,6 +30,8 @@ export default function Home() {
 
     if (draftFilter) filters.push("draft");
     if (paidFilter) filters.push("paid");
+    if (clearingFilter) filters.push("clearing");
+    if (clearedFilter) filters.push("cleared");
     if (pendingFilter) filters.push("pending");
 
     setActiveFilters(filters);
@@ -43,6 +47,8 @@ export default function Home() {
     paidFilter,
     pendingFilter,
     draftFilter,
+    clearingFilter,
+    clearedFilter
   ]);
 
   const filterHandlers = {
@@ -58,10 +64,22 @@ export default function Home() {
         pendingFilterHandler.toggle();
       },
     },
+    clearing: {
+      value: clearingFilter,
+      onChange: () => {
+        clearingFilterHandler.toggle();
+      },
+    },
     paid: {
       value: paidFilter,
       onChange: () => {
         paidFilterHandler.toggle();
+      },
+    },
+    cleared: {
+      value: clearedFilter,
+      onChange: () => {
+        clearedFilterHandler.toggle();
       },
     },
   };

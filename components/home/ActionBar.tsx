@@ -13,6 +13,8 @@ interface ActionBarProps {
     paid: FilterType;
     pending: FilterType;
     draft: FilterType;
+    clearing: FilterType;
+    cleared: FilterType;
   };
   handleNewInvoice: () => void;
 }

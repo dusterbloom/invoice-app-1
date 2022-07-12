@@ -3,7 +3,7 @@ import { useThemeContext } from "../../lib/context/ThemeContext";
 import styles from "./styles/Indicators.module.scss";
 
 interface IndicatorProps {
-  type: "draft" | "pending" | "paid";
+  type: "draft" | "pending" | "paid" | "clearing" | "cleared";
 }
 const Indicator: React.FC<IndicatorProps> = ({ type }) => {
   const { dark } = useThemeContext();
@@ -22,6 +22,20 @@ const Indicator: React.FC<IndicatorProps> = ({ type }) => {
           <p>Paid</p>
         </div>
       );
+    case "clearing":
+    return (
+      <div className={styles.clearing}>
+        <span></span>
+        <p>Clearing</p>
+      </div>
+    );
+    case "cleared":
+    return (
+      <div className={styles.cleared}>
+        <span></span>
+        <p>Cleared</p>
+      </div>
+    );
     case "pending":
     default:
       return (

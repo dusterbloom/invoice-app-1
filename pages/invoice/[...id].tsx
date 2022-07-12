@@ -78,6 +78,7 @@ const InvoicePage: React.FC = () => {
           onClickEditing={setEditing.toggle}
           onClickDelete={deletingHandlers.on}
           onClickPaid={handleMarkAsPaid}
+          onClickClearing={handleMarkAsClearing}
           onClickCleared={handleMarkAsCleared}
 
         />
@@ -89,6 +90,7 @@ const InvoicePage: React.FC = () => {
           onClickDelete={deletingHandlers.on}
           onClickPaid={handleMarkAsPaid}
           onClickCleared={handleMarkAsCleared}
+          onClickClearing={handleMarkAsClearing}
           status={invoice.status}
         />
       )}

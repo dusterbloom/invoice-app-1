@@ -45,7 +45,13 @@ const InvoicePage: React.FC = () => {
       editInvoice(invoice.id, { ...invoice, status: "paid" });
       setInvoice({ ...invoice, status: "paid" });    }
   };
-
+  
+  const handleMarkAsClearing = () => {
+    console.log(`Marking as clearing...`);
+    if (invoice) {
+      editInvoice(invoice.id, { ...invoice, status: "clearing" });
+      setInvoice({ ...invoice, status: "clearing" });    }
+  }; 
 
   const handleMarkAsCleared = () => {
     console.log(`Marking as cleared...`);
@@ -54,12 +60,7 @@ const InvoicePage: React.FC = () => {
       setInvoice({ ...invoice, status: "cleared" });    }
   }; 
 
-  const handleMarkAsClearing = () => {
-    console.log(`Marking as clearing...`);
-    if (invoice) {
-      editInvoice(invoice.id, { ...invoice, status: "clearing" });
-      setInvoice({ ...invoice, status: "clearing" });    }
-  }; 
+
 
   return (
     <main
@@ -96,8 +97,8 @@ const InvoicePage: React.FC = () => {
           onClickEditing={setEditing.toggle}
           onClickDelete={deletingHandlers.on}
           onClickPaid={handleMarkAsPaid}
-          onClickCleared={handleMarkAsCleared}
           onClickClearing={handleMarkAsClearing}
+          onClickCleared={handleMarkAsCleared}
           status={invoice.status}
         />
       )}
